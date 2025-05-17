@@ -7,7 +7,6 @@ const generateColorPalette = (baseHue: number) => {
   const saturation = 80;
   const lightnessLevels = [45, 55, 65, 75, 85];
 
-  // Generate palette colors with varying lightness
   return lightnessLevels.map((lightness, i) => {
     const hue = (baseHue + i * 10) % 360;
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
@@ -76,7 +75,6 @@ const TitleWave = () => {
     height: number,
     time: number
   ) => {
-    // Animate initial bg fill opacity over 1s
     const bgColor = `hsl(${baseHue.current}, 80%, 10%)`;
     const fadeDuration = 1000; // 1 second
     const opacity = Math.min(time / fadeDuration, 1);
@@ -85,13 +83,6 @@ const TitleWave = () => {
     ctx.fillStyle = `rgba(0,0,0,0)`; // clear to transparent
     ctx.fillRect(0, 0, width, height);
 
-    // Draw the background with the base color and animated opacity
-    ctx.fillStyle = bgColor;
-    ctx.globalAlpha = opacity;
-    ctx.fillRect(0, 0, width, height);
-    ctx.globalAlpha = 1; // reset alpha
-
-    // Draw wave layers
     waveLayers.current.forEach((layer, index) => {
       if (time < layer.delay) return;
 
@@ -122,7 +113,6 @@ const TitleWave = () => {
       ctx.fill();
     });
 
-    // Wall of color
     if (time > wall.current.delay) {
       const elapsed = time - wall.current.delay;
       const duration = 800;
@@ -153,7 +143,6 @@ const TitleWave = () => {
 
       const animatingWall = time < wall.current.delay + 800;
 
-      // Keep animating if waves or wall animating, or background opacity < 1
       if (animatingWaves || animatingWall || time < 1000) {
         animationRef.current = requestAnimationFrame(animate);
       } else {
