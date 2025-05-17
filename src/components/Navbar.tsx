@@ -44,7 +44,7 @@ export default function Navbar() {
             href={`#${section}`}
             className={clsx(
               "transition-colors p-2 rounded-md",
-              active === section ? "text-black hover:text-black font-[999] bg-white" : "hover:text-white text-[#fff6]"
+              active === section ? "text-black hover:text-black font-black bg-white" : "hover:text-white text-[#fff6]"
             )}
           >
             {section}
