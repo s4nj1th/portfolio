@@ -25,6 +25,11 @@ body {
   font-family: Atkinson Hyperlegible, Arial, Helvetica, sans-serif;
 }
 
+::selection {
+  background-color: #fff;
+  color: #000;
+}
+
 @layer utilities {
   @keyframes fade-in-scale {
     0% {
@@ -39,5 +44,15 @@ body {
 
   .animate-fade-in-delay {
     animation: fade-in-scale 0.8s ease-out 0s forwards;
+  }
+}
+
+@keyframes blink-shadow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #ffffffcc;
+  }
+  50% {
+    text-shadow: none;
   }
 }

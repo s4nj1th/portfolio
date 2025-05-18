@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 
-const sections = ["home", "projects", "experience", "skills", "contact"];
+const sections = ["home", "projects", "skills", "contact"];
 
 export default function Navbar() {
   const [active, setActive] = useState("home");

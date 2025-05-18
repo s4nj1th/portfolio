@@ -19,7 +19,7 @@ const ProjectsGrid = () => {
   }, [showAll]);
 
   return (
-    <div className="bg-[#2228] border-[#222] border rounded-[12px] shadow-lg p-10 flex flex-col items-center gap-6">
+    <div className="bg-[#1118] border-[#222] border rounded-[12px] shadow-lg p-10 flex flex-col items-center gap-6">
       <h1 className="text-5xl font-black text-center">Projects</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
@@ -31,7 +31,7 @@ const ProjectsGrid = () => {
             rel="noopener noreferrer"
             className="group rounded-xl overflow-hidden bg-[#111] hover:bg-[#222] border border-[#333] hover:border-white/20 shadow-md hover:shadow-lg transition-all w-full max-w-sm"
           >
-            <div className="relative h-48 w-full">
+            <div className="z-0 relative h-48 w-full">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -40,7 +40,7 @@ const ProjectsGrid = () => {
                 className="transition-transform duration-300 group-hover:scale-105"
               />
             </div>
-            <div className="p-4">
+            <div className="z-10 p-4 bg-[#111] group-hover:bg-[#222]">
               <h3 className="text-lg font-bold text-white mb-1">
                 {project.title}
               </h3>
@@ -63,7 +63,7 @@ const ProjectsGrid = () => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-xl overflow-hidden hover:bg-[#fff2] border border-[#333] hover:border-white/20 shadow hover:shadow-lg transition-all w-full max-w-sm"
+              className="group rounded-xl overflow-hidden bg-[#111] hover:bg-[#222] border border-[#333] hover:border-white/20 shadow hover:shadow-lg transition-all w-full max-w-sm"
             >
               <div className="relative h-48 w-full">
                 <Image

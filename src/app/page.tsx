@@ -3,6 +3,7 @@ import StarBackground from "@/components/StarBackground";
 import TitleHero from "@/components/TitleHero";
 import Introduction from "@/components/Introduction";
 import ProjectsGrid from "@/components/ProjectsGrid";
+import SkillsSection from "@/components/SkillsSection";
 
 export default function Home() {
   return (
@@ -17,8 +18,9 @@ export default function Home() {
       <section id="projects" className="animate-fade-in-delay">
         <ProjectsGrid />
       </section>
-      <section id="experiences"></section>
-      <section id="skills"></section>
+      <section id="skills" className="animate-fade-in-delay">
+        <SkillsSection />
+      </section>
       <section id="contact"></section>
     </main>
     </>

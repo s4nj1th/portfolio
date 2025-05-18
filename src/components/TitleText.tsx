@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAME = "Sanjith";
@@ -20,6 +20,7 @@ const TitleText = () => {
   const [active, setActive] = useState(false);
   const [subtitleIndex, setSubtitleIndex] = useState(0);
   const [clickCount, setClickCount] = useState(0);
+  const [showShadow, setShowShadow] = useState(false);
 
   const handleClick = () => {
     setActive((prev) => !prev);
@@ -31,9 +32,20 @@ const TitleText = () => {
     setSubtitleIndex(nextIndex);
 
     setClickCount((prev) => prev + 1);
+    setShowShadow(false); // remove blinking effect on click
 
     document.title = !active ? USERNAME : NAME;
   };
+
+  useEffect(() => {
+    if (clickCount > 0) return;
+
+    const timer = setTimeout(() => {
+      setShowShadow(true);
+    }, 10000); // start after 30s
+
+    return () => clearTimeout(timer);
+  }, [clickCount]);
 
   const letters = active ? USERNAME.split("") : NAME.split("");
   const subtitle = SUBTITLES[subtitleIndex];
@@ -42,7 +54,9 @@ const TitleText = () => {
     <div>
       <div
         onClick={handleClick}
-        className="inline-flex text-white text-6xl font-black leading-none cursor-pointer items-center"
+        className={`inline-flex text-white text-6xl font-black leading-none cursor-pointer items-center ${
+          showShadow ? "animate-[blink-shadow_5s_infinite]" : ""
+        }`}
       >
         <AnimatePresence>
           {active && (

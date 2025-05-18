@@ -3,13 +3,13 @@ const projects = [
     title: "Handwriting Symbol Classifier",
     description:
       "Trained a neural network to recognize handwritten mathematical symbols with 95% accuracy using CNNs and labeled datasets.",
-    image: "/projects/mathNN-1.webp",
+    image: "/projects/mathNN.webp",
     link: "https://github.com/s4nj1th/handwriting-ml",
   },
   {
     title: "Punk Dung",
     description:
-      "Developed a combat-focused RPG in Godot featuring pvisualizerrocedurally generated maps and dynamic gameplay mechanics.",
+      "Developed a combat-focused RPG in Godot featuring procedurally generated maps and dynamic gameplay mechanics.",
     image: "/projects/punkdung.webp",
     link: "",
   },
