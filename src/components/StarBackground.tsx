@@ -1,21 +1,22 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import type p5 from "p5";
 
 const StarBackground = () => {
   const sketchRef = useRef<HTMLDivElement>(null);
-  const p5Instance = useRef<any>(null); // Use `any` to avoid the type error
+  const p5Instance = useRef<p5 | null>(null);
 
   useEffect(() => {
-    let p5: any;
+    let P5Constructor: typeof p5;
 
     const loadSketch = async () => {
       const p5Module = await import("p5"); // Dynamic import
-      p5 = p5Module.default;
+      P5Constructor = p5Module.default;
 
       if (!sketchRef.current) return;
 
-      const sketch = (p: any) => {
+      const sketch = (p: p5) => {
         let starFieldWidth: number;
         let starFieldHeight: number;
 
@@ -41,7 +42,7 @@ const StarBackground = () => {
         };
 
         p.draw = () => {
-          // No animation needed
+          // Static background
         };
 
         p.windowResized = () => {
@@ -61,7 +62,7 @@ const StarBackground = () => {
         };
       };
 
-      p5Instance.current = new p5(sketch, sketchRef.current);
+      p5Instance.current = new P5Constructor(sketch, sketchRef.current!);
     };
 
     loadSketch();
