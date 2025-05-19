@@ -5,6 +5,8 @@ import TitleHero from "@/components/TitleHero";
 import Introduction from "@/components/Introduction";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import SkillsSection from "@/components/SkillsSection";
+import Emailer from "@/components/Emailer";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -12,7 +14,7 @@ export default function Home() {
     <Navbar />
     <StarBackground />
     <UfoFlyer />
-    <main className="mt-10 w-[80vw] max-w-[1200px] mx-auto flex flex-col gap-4">
+    <main className="my-10 w-[80vw] max-w-[1200px] mx-auto flex flex-col gap-4">
       <section id="home" className="flex flex-col gap-4 animate-fade-in-delay">
         <TitleHero />
         <Introduction />
@@ -23,8 +25,13 @@ export default function Home() {
       <section id="skills" className="animate-fade-in-delay">
         <SkillsSection />
       </section>
-      <section id="contact"></section>
+      <section id="contact" className="animate-fade-in-delay">
+        <Emailer />
+      </section>
     </main>
+    <footer>
+      <Footer />
+    </footer>
     </>
   );
 }
