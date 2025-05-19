@@ -17,49 +17,47 @@ const SUBTITLES = [
 ];
 
 const TitleText = () => {
-  const [active, setActive] = useState(false);
-  const [subtitleIndex, setSubtitleIndex] = useState(0);
-  const [clickCount, setClickCount] = useState(0);
-  const [showShadow, setShowShadow] = useState(false);
+  const [showUsername, setShowUsername] = useState(false);
+  const [currentSubtitle, setCurrentSubtitle] = useState(0);
+  const [clicks, setClicks] = useState(0);
+  const [attentionDot, setAttentionDot] = useState(false);
 
   const handleClick = () => {
-    setActive((prev) => !prev);
+    setShowUsername((prev) => !prev);
 
-    let nextIndex = Math.floor(Math.random() * SUBTITLES.length);
-    if (nextIndex === subtitleIndex) {
-      nextIndex = (subtitleIndex + 1) % SUBTITLES.length;
+    let next = Math.floor(Math.random() * SUBTITLES.length);
+    if (next === currentSubtitle) {
+      next = (currentSubtitle + 1) % SUBTITLES.length;
     }
-    setSubtitleIndex(nextIndex);
+    setCurrentSubtitle(next);
 
-    setClickCount((prev) => prev + 1);
-    setShowShadow(false); // remove blinking effect on click
+    setClicks((prev) => prev + 1);
+    setAttentionDot(false);
 
-    document.title = !active ? USERNAME : NAME;
+    document.title = !showUsername ? USERNAME : NAME;
   };
 
   useEffect(() => {
-    if (clickCount > 0) return;
+    if (clicks > 0) return;
 
     const timer = setTimeout(() => {
-      setShowShadow(true);
-    }, 10000); // start after 30s
+      setAttentionDot(true);
+    }, 3000);
 
     return () => clearTimeout(timer);
-  }, [clickCount]);
+  }, [clicks]);
 
-  const letters = active ? USERNAME.split("") : NAME.split("");
-  const subtitle = SUBTITLES[subtitleIndex];
+  const displayedLetters = showUsername ? USERNAME.split("") : NAME.split("");
+  const subtitleText = SUBTITLES[currentSubtitle];
 
   return (
     <div>
       <div
         onClick={handleClick}
-        className={`inline-flex text-white text-6xl font-black leading-none cursor-pointer items-center ${
-          showShadow ? "animate-[blink-shadow_5s_infinite]" : ""
-        }`}
+        className="inline-flex text-white text-6xl font-black leading-none cursor-pointer items-center"
       >
         <AnimatePresence>
-          {active && (
+          {showUsername && (
             <motion.span
               key="@"
               className="text-[#fff4] mr-2"
@@ -74,25 +72,32 @@ const TitleText = () => {
         </AnimatePresence>
 
         <span
-          className={active ? "font-mono" : ""}
+          className={`relative inline-block ${showUsername ? "font-mono" : ""}`}
           style={{
-            borderBottom: active ? "none" : "4px solid white",
-            display: "inline-block",
+            borderBottom: showUsername ? "none" : "4px solid white",
             paddingBottom: "3px",
+            marginBottom: showUsername ? "4px" : "none",
           }}
         >
-          {letters.map((char, i) => {
-            const prevChar = active ? NAME[i] : USERNAME[i];
-            const isDifferent = char !== prevChar;
+          {attentionDot && (
+            <>
+              <span className="absolute top-0 -right-2 h-2.5 w-2.5 rounded-full bg-red-500 opacity-75 animate-ping pointer-events-none" />
+              <span className="absolute top-0 -right-2 h-2.5 w-2.5 rounded-full bg-red-500 pointer-events-none" />
+            </>
+          )}
+
+          {displayedLetters.map((char, i) => {
+            const previousChar = showUsername ? NAME[i] : USERNAME[i];
+            const isNew = char !== previousChar;
 
             return (
               <AnimatePresence key={i} mode="wait">
                 <motion.span
-                  key={char + i + (active ? "on" : "off")}
-                  initial={isDifferent ? { y: -20, opacity: 0 } : false}
+                  key={char + i + (showUsername ? "on" : "off")}
+                  initial={isNew ? { y: -20, opacity: 0 } : false}
                   animate={{ y: 0, opacity: 1 }}
-                  exit={isDifferent ? { y: 20, opacity: 0 } : false}
-                  transition={{ duration: isDifferent ? 0.2 : 0 }}
+                  exit={isNew ? { y: 20, opacity: 0 } : undefined}
+                  transition={{ duration: isNew ? 0.2 : 0 }}
                   style={{ display: "inline-block" }}
                 >
                   {char}
@@ -103,9 +108,9 @@ const TitleText = () => {
         </span>
       </div>
 
-      <p className="mt-4 text-lg text-white drop-shadow-lg">{subtitle}</p>
+      <p className="mt-4 text-lg text-white drop-shadow-lg">{subtitleText}</p>
 
-      {clickCount > 5 && (
+      {clicks > 5 && (
         <p className="mt-2 text-sm text-[#ccca] italic">
           (wow! you really are clicking that thang...)
         </p>

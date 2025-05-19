@@ -12,10 +12,10 @@ const skillCats = {
     { name: "TensorFlow", bgColor: "#ee922b", icon: "SiTensorflow" },
     { name: "NumPy", bgColor: "#013243", icon: "SiNumpy" },
     { name: "Pandas", bgColor: "#150458", icon: "SiPandas" },
-    { name: "Jupyter Notebook", bgColor: "#FA0F00", icon: "SiJupyter" },
+    { name: "Jupyter Notebook", bgColor: "#f37726", icon: "SiJupyter" },
   ],
   "Web Dev": [
-    { name: "HTML5", bgColor: "#E34F26", icon: "SiHtml5" },
+    { name: "HTML5", bgColor: "#fc4703", icon: "SiHtml5" },
     { name: "CSS3", bgColor: "#66309a", icon: "SiCsswizardry" },
     { name: "JavaScript", bgColor: "#f1dc55", icon: "SiJavascript" },
     { name: "NodeJS", bgColor: "#6DA55F", icon: "SiNodedotjs" },

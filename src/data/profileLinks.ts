@@ -1,4 +1,5 @@
-import { SiGithub, SiX, SiLinkedin, SiBluesky, SiInstagram, SiLeetcode } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiBluesky, SiInstagram, SiLeetcode } from "react-icons/si";
+import { FaTwitter } from "react-icons/fa6";
 
 const profileLinks = [
   {
@@ -22,14 +23,14 @@ const profileLinks = [
   {
     href: "https://twitter.com/s4nj1th",
     label: "Twitter",
-    icon: SiX,
-    hoverColor: "#ffffff",
+    icon: FaTwitter,
+    hoverColor: "#1da1f2",
   },
   {
     href: "https://bsky.app/profile/s4nj1th.bsky.social",
     label: "Bluesky",
     icon: SiBluesky,
-    hoverColor: "#0683f9",
+    hoverColor: "#1185fe",
   },
   {
     href: "https://www.instagram.com/s4nj1th/",
