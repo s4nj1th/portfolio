@@ -5,7 +5,6 @@ import TitleHero from "@/components/TitleHero";
 import Introduction from "@/components/Introduction";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import SkillsSection from "@/components/SkillsSection";
-import Emailer from "@/components/Emailer";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -24,9 +23,6 @@ export default function Home() {
       </section>
       <section id="skills" className="animate-fade-in-delay">
         <SkillsSection />
-      </section>
-      <section id="contact" className="animate-fade-in-delay">
-        <Emailer />
       </section>
     </main>
     <footer>
