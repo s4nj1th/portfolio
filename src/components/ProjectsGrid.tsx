@@ -7,14 +7,14 @@ import projects from "@/data/projects";
 const getInitialVisibleCount = () => {
   if (typeof window === "undefined") return 3;
 
-  if (window.innerWidth >= 1024) return 9; // lg: 3 columns, 3 rows
-  if (window.innerWidth >= 640) return 6;  // sm: 2 columns, 3 rows
+  if (window.innerWidth >= 1024) return 3; // lg: 3 columns, 3 rows
+  if (window.innerWidth >= 640) return 4;  // sm: 2 columns, 3 rows
   return 3;                                // 1 column
 };
 
 const ProjectsGrid = () => {
   const [showAll, setShowAll] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(getInitialVisibleCount);
+  const [visibleCount, setVisibleCount] = useState(3);
   const containerRef = useRef<HTMLDivElement>(null);
   const [maxHeight, setMaxHeight] = useState("0px");
 
