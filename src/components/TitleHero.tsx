@@ -16,7 +16,7 @@ export default function TitleHero() {
               src="/assets/profile.webp"
               alt="Profile"
               fill
-              className="object-contain"
+              className="object-cover rounded-xl"
               sizes="(min-width: 768px) 250px"
             />
           </div>
