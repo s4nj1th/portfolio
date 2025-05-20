@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import skillCats from "@/data/skills";
-import * as Icons from "react-icons/si";
+import * as SiIcons from "react-icons/si";
+import * as VscIcons from "react-icons/vsc";
 
 type Skill = {
   name: string;
@@ -16,7 +17,7 @@ const isLight = (hex: string): boolean => {
   const g = parseInt(c.substring(2, 4), 16);
   const b = parseInt(c.substring(4, 6), 16);
   const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
-  return luminance > 186; // threshold for light background
+  return luminance > 186;
 };
 
 const getAllSkills = (): Skill[] => {
@@ -73,7 +74,9 @@ const SkillsSection = () => {
       {/* Skills badges */}
       <div className="flex flex-wrap justify-center gap-3 w-[80%] min-w-[100px] m-auto">
         {allSkills.map((skill) => {
-          const Icon = Icons[skill.icon as keyof typeof Icons];
+          const Icon =
+            SiIcons[skill.icon as keyof typeof SiIcons] ||
+            VscIcons[skill.icon as keyof typeof VscIcons];
           const isDimmed =
             activeCategory && !highlightedSkills?.has(skill.name);
 
