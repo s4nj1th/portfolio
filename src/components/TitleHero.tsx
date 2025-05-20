@@ -1,5 +1,4 @@
 import Image from "next/image";
-import profileImg from "../../public/profile.jpg";
 import TitleText from "./TitleText";
 import SocialLinks from "./SocialLinks";
 
@@ -13,11 +12,11 @@ export default function TitleHero() {
 
         <div className="flex flex-col md:flex-row items-center gap-4 shadow-2xl">
           <Image
-            src={profileImg}
+            src="/assets/profile.webp"
             alt="Profile"
             width={250}
             height={250}
-            className="rounded-xl object-cover"
+            className="rounded-xl object-contain"
           />
           <SocialLinks />
         </div>
