@@ -4,19 +4,40 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import projects from "@/data/projects";
 
+const getInitialVisibleCount = () => {
+  if (typeof window === "undefined") return 3;
+
+  if (window.innerWidth >= 1024) return 9; // lg: 3 columns, 3 rows
+  if (window.innerWidth >= 640) return 6;  // sm: 2 columns, 3 rows
+  return 3;                                // 1 column
+};
+
 const ProjectsGrid = () => {
   const [showAll, setShowAll] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(getInitialVisibleCount);
   const containerRef = useRef<HTMLDivElement>(null);
   const [maxHeight, setMaxHeight] = useState("0px");
 
-  const visibleProjects = projects.slice(0, 3);
-  const hiddenProjects = projects.slice(3);
+  useEffect(() => {
+    const handleResize = () => {
+      const count = getInitialVisibleCount();
+      setVisibleCount(count);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Call once initially
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const visibleProjects = projects.slice(0, visibleCount);
+  const hiddenProjects = projects.slice(visibleCount);
 
   useEffect(() => {
     if (containerRef.current) {
       setMaxHeight(showAll ? `${containerRef.current.scrollHeight}px` : "0px");
     }
-  }, [showAll]);
+  }, [showAll, visibleCount]);
 
   return (
     <div className="bg-[#1118] border-[#222] border rounded-[12px] shadow-lg p-10 flex flex-col items-center gap-6">
@@ -59,7 +80,7 @@ const ProjectsGrid = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center mt-6">
           {hiddenProjects.map((project, i) => (
             <a
-              key={i + 3}
+              key={i + visibleCount}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -85,12 +106,14 @@ const ProjectsGrid = () => {
         </div>
       </div>
 
-      <button
-        onClick={() => setShowAll(!showAll)}
-        className="text-black font-bold text-sm mt-4 px-4 py-2 bg-white hover:bg-[#eee] rounded-md shadow-md cursor-pointer"
-      >
-        {showAll ? "Show Less" : "Show More"}
-      </button>
+      {projects.length > visibleCount && (
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="text-black font-bold text-sm mt-4 px-4 py-2 bg-white hover:bg-[#eee] rounded-md shadow-md cursor-pointer"
+        >
+          {showAll ? "Show Less" : "Show More"}
+        </button>
+      )}
     </div>
   );
 };

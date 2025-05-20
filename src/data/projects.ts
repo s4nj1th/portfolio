@@ -20,6 +20,20 @@ const projects = [
     image: "/projects/attCalc.webp",
     link: "https://s4nj1th.github.io/attendance-calculator/",
   },
+  {
+    title: "Instrument Detection",
+    description:
+      "Co-authoring a research paper focused on training a convolutional neural network (CNN) model for the detection and classification of surgical instruments in medical images, leveraging YOLO and Roboflow.",
+    image: "/projects/instDtct.webp",
+    link: "",
+  },
+  {
+    title: "MomenTerm",
+    description:
+      "Developed a web application using Next.js to manage and track stock investments, enabling users to create, update, and maintain personalized watchlists.",
+    image: "/projects/mmntrm.webp",
+    link: ""
+  }
 ];
 
 export default projects;
