@@ -6,6 +6,7 @@ const skillCats = {
     { name: "Rust", bgColor: "#F74B00", icon: "SiRust" },
     { name: "Java", bgColor: "#ED272C", icon: "FaJava" },
     { name: "Haskell", bgColor: "#5E5086", icon: "SiHaskell" },
+    { name: "Go", bgColor: "#00ACD7", icon: "SiGo" }
   ],
   "AI/ML": [
     { name: "PyTorch", bgColor: "#EF5233", icon: "SiPytorch" },
