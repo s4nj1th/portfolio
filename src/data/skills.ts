@@ -4,15 +4,16 @@ const skillCats = {
     { name: "C", bgColor: "#00599C", icon: "SiC" },
     { name: "C++", bgColor: "#00599C", icon: "SiCplusplus" },
     { name: "Rust", bgColor: "#F74B00", icon: "SiRust" },
-    { name: "Java", bgColor: "#ED8B00", icon: "SiOpenjdk" },
+    { name: "Java", bgColor: "#ED272C", icon: "FaJava" },
     { name: "Haskell", bgColor: "#5E5086", icon: "SiHaskell" },
   ],
   "AI/ML": [
     { name: "PyTorch", bgColor: "#EF5233", icon: "SiPytorch" },
     { name: "TensorFlow", bgColor: "#EE922B", icon: "SiTensorflow" },
-    { name: "NumPy", bgColor: "#013243", icon: "SiNumpy" },
-    { name: "Pandas", bgColor: "#150458", icon: "SiPandas" },
+    { name: "NumPy", bgColor: "#4C78D0", icon: "SiNumpy" },
+    { name: "Pandas", bgColor: "#160458", icon: "SiPandas" },
     { name: "Jupyter Notebook", bgColor: "#F37726", icon: "SiJupyter" },
+    { name: "MATLAB", bgColor: "#D16432", icon: "SiMatrix" }
   ],
   "Web Dev": [
     { name: "HTML5", bgColor: "#FC4703", icon: "SiHtml5" },
@@ -38,6 +39,9 @@ const skillCats = {
     { name: "Git", bgColor: "#F05033", icon: "SiGit" },
     { name: "Vim", bgColor: "#20913D", icon: "SiVim" },
     { name: "VS Code", bgColor: "#007ACC", icon: "VscVscode" },
+    { name: "Emacs", bgColor: "#827BC4", icon: "SiGnuemacs" },
+    { name: "GitHub", bgColor: "#1a1e22", icon: "SiGithub" },
+    { name: "Docker", bgColor: "#1D63ED", icon: "SiDocker" }
   ],
 };
 

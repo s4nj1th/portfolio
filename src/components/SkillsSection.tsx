@@ -4,6 +4,7 @@ import { useState } from "react";
 import skillCats from "@/data/skills";
 import * as SiIcons from "react-icons/si";
 import * as VscIcons from "react-icons/vsc";
+import * as FaIcons from "react-icons/fa";
 
 type Skill = {
   name: string;
@@ -76,7 +77,8 @@ const SkillsSection = () => {
         {allSkills.map((skill) => {
           const Icon =
             SiIcons[skill.icon as keyof typeof SiIcons] ||
-            VscIcons[skill.icon as keyof typeof VscIcons];
+            VscIcons[skill.icon as keyof typeof VscIcons] ||
+            FaIcons[skill.icon as keyof typeof FaIcons];
           const isDimmed =
             activeCategory && !highlightedSkills?.has(skill.name);
 
