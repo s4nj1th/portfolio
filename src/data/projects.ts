@@ -14,6 +14,13 @@ const projects = [
     link: "",
   },
   {
+    title: "Dhammapada App",
+    description:
+      "Coded a cross-platform app in flutter to read the Dhammapada with multiple translations and view modes.",
+    image: "/projects/dhmpd.webp",
+    link: "https://github.com/s4nj1th/dhammapada",
+  },
+  {
     title: "Attendance Calculator",
     description:
       "Created a website in simple HTML/CSS + JS to calculate allowable skips or required classes to maintain attendance in a course.",
@@ -32,8 +39,8 @@ const projects = [
     description:
       "Developed a web application using Next.js to manage and track stock investments, enabling users to create, update, and maintain personalized watchlists.",
     image: "/projects/mmntrm.webp",
-    link: ""
-  }
+    link: "",
+  },
 ];
 
 export default projects;

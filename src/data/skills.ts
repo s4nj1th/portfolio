@@ -26,6 +26,12 @@ const skillCats = {
     { name: "Next JS", bgColor: "#000000", icon: "SiNextdotjs" },
     { name: "TailwindCSS", bgColor: "#38B2AC", icon: "SiTailwindcss" },
   ],
+  "App Dev": [
+    { name: "Flutter", bgColor: "#19BDFD", icon: "SiFlutter" },
+    { name: "Dart", bgColor: "#2CB7F6", icon: "SiDart" },
+    { name: "Android Studio", bgColor: "#142F40", icon: "SiAndroidstudio" },
+    { name: "React Native", bgColor: "#222222", icon: "SiReact" }
+  ],
   "Embedded Systems": [
     { name: "Arduino", bgColor: "#00979D", icon: "SiArduino" },
     { name: "Raspberry Pi", bgColor: "#C51A4A", icon: "SiRaspberrypi" },
