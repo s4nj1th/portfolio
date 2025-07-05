@@ -9,7 +9,7 @@ const profileLinks = [
     hoverColor: "#7950f2",
   },
   {
-    href: "https://www.linkedin.com/in/sanjith-m-79980a343/",
+    href: "https://www.linkedin.com/in/s4nj1th",
     label: "LinkedIn",
     icon: SiLinkedin,
     hoverColor: "#136bc5",
