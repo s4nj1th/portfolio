@@ -1,3 +1,5 @@
+import { CgFileDocument } from "react-icons/cg";
+
 export default function Introduction() {
   return (
     <div className="bg-[#1118] border-[#222] border rounded-[12px] shadow-lg p-10 flex flex-col gap-4">
@@ -9,6 +11,19 @@ export default function Introduction() {
         through code. I focus on practical, purposeful projects — the kind that
         solve real problems or just make something a little better (and cooler).
       </p>
+      <div className="text-right">
+        <div className="bg-white text-black px-2 py-2 font-black rounded-xl inline-block">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2"
+          >
+            <CgFileDocument size={20} />
+            Resume
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
