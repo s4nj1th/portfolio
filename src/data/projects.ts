@@ -18,7 +18,7 @@ const projects = [
     description:
       "Coded a cross-platform app in flutter to read the Dhammapada with multiple translations and view modes.",
     image: "/projects/dhmpd.webp",
-    link: "https://github.com/s4nj1th/dhammapada",
+    link: "https://github.com/s4nj1th/pocket-dhamma",
   },
   {
     title: "Attendance Calculator",

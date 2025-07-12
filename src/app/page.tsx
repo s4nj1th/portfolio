@@ -14,14 +14,14 @@ export default function Home() {
     <StarBackground />
     <UfoFlyer />
     <main className="my-10 w-[80vw] max-w-[1200px] mx-auto flex flex-col gap-4">
-      <section id="home" className="flex flex-col gap-4 animate-fade-in-delay">
+      <section id="home" className="flex flex-col gap-4 animate-fade-in-delay scroll-mt-[80px]">
         <TitleHero />
         <Introduction />
       </section>
-      <section id="projects" className="animate-fade-in-delay">
+      <section id="projects" className="animate-fade-in-delay scroll-mt-[80px]">
         <ProjectsGrid />
       </section>
-      <section id="skills" className="animate-fade-in-delay">
+      <section id="skills" className="animate-fade-in-delay scroll-mt-[80px]">
         <SkillsSection />
       </section>
     </main>
