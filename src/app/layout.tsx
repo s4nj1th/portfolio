@@ -11,6 +11,9 @@ const atkSans = Atkinson_Hyperlegible({
 
 export const metadata: Metadata = {
   title: "Sanjith",
+    icons: {
+    icon: "/assets/favicon.ico",
+  },
   description: "Portfolio website for Sanjith",
 };
 
