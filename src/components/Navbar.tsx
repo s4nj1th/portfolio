@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { CgFileDocument } from "react-icons/cg";
 
 const sections = ["home", "projects", "skills"];
 
@@ -26,6 +27,7 @@ export default function Navbar() {
           threshold: 0.1,
         }
       );
+
       observer.observe(el);
       observers.push(observer);
     });
@@ -36,20 +38,39 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-[#111c] backdrop-blur-md z-50 shadow border-b border-[#333]">
-      <div className="flex justify-center gap-4 py-3 text-sm uppercase tracking-wide text-white">
-        {sections.map((section) => (
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#111c] backdrop-blur-md border-b border-[#333] shadow">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-sm uppercase tracking-wide text-white">
+        
+        <div className="font-semibold text-white">Sanjith</div>
+
+        <div className="hidden md:flex gap-4 justify-center flex-1">
+          {sections.map((section) => (
+            <a
+              key={section}
+              href={`#${section}`}
+              className={clsx(
+                "transition-colors p-2 rounded-md",
+                active === section
+                  ? "text-black bg-white font-bold"
+                  : "text-[#fff6] hover:text-white"
+              )}
+            >
+              {section}
+            </a>
+          ))}
+        </div>
+
+        <div>
           <a
-            key={section}
-            href={`#${section}`}
-            className={clsx(
-              "transition-colors p-2 rounded-md",
-              active === section ? "text-black hover:text-black font-black bg-white" : "hover:text-white text-[#fff6]"
-            )}
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-white text-black px-3 py-2 rounded-xl font-semibold"
           >
-            {section}
+            <CgFileDocument size={20} />
+            Resume
           </a>
-        ))}
+        </div>
       </div>
     </nav>
   );
