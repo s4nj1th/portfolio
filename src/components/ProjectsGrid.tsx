@@ -41,7 +41,7 @@ const ProjectsGrid = () => {
 
   return (
     <div className="bg-[#1118] border-[#222] border rounded-[12px] shadow-lg p-10 flex flex-col items-center gap-6">
-      <h1 className="text-5xl font-black text-center">Projects</h1>
+      <h1 className="text-5xl font-black text-white text-center">Projects</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
         {visibleProjects.map((project, i) => (

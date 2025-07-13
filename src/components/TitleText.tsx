@@ -54,7 +54,7 @@ const TitleText = () => {
     <div>
       <div
         onClick={handleClick}
-        className="inline-flex text-white text-6xl font-black leading-none cursor-pointer items-center"
+        className="inline-flex text-white text-6xl font-black text-white leading-none cursor-pointer items-center"
       >
         <AnimatePresence>
           {showUsername && (
