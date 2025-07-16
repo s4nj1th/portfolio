@@ -109,7 +109,7 @@ export default function Navbar() {
         {/* Resume Button */}
         <div className="ml-4">
           <a
-            href="/resume.pdf"
+            href="/SanjithM_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-white text-black px-3 py-2 rounded-xl font-semibold"
