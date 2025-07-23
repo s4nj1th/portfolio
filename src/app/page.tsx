@@ -7,27 +7,32 @@ import ProjectsGrid from "@/components/ProjectsGrid";
 import SkillsSection from "@/components/SkillsSection";
 import Footer from "@/components/Footer";
 
+const sections = [
+  { id: "home", components: [<TitleHero key="title" />, <Introduction key="intro" />] },
+  { id: "projects", components: [<ProjectsGrid key="projects" />] },
+  { id: "skills", components: [<SkillsSection key="skills" />] },
+];
+
 export default function Home() {
   return (
     <>
-    <Navbar />
-    <StarBackground />
-    <UfoFlyer />
-    <main className="my-10 w-[80vw] max-w-[1200px] mx-auto flex flex-col gap-4">
-      <section id="home" className="flex flex-col gap-4 animate-fade-in-delay scroll-mt-[80px]">
-        <TitleHero />
-        <Introduction />
-      </section>
-      <section id="projects" className="animate-fade-in-delay scroll-mt-[80px]">
-        <ProjectsGrid />
-      </section>
-      <section id="skills" className="animate-fade-in-delay scroll-mt-[80px]">
-        <SkillsSection />
-      </section>
-    </main>
-    <footer>
-      <Footer />
-    </footer>
+      <Navbar />
+      <StarBackground />
+      <UfoFlyer />
+      <main className="my-10 w-[80vw] max-w-5xl mx-auto flex flex-col gap-4">
+        {sections.map(({ id, components }) => (
+          <section
+            key={id}
+            id={id}
+            className="scroll-mt-[80px] flex flex-col gap-4"
+          >
+            {components}
+          </section>
+        ))}
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

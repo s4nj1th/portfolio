@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#111c] backdrop-blur-md border-b border-[#333] shadow">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-sm tracking-wide text-white">
+      <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between text-sm tracking-wide text-white">
         
         {/* Logo */}
         <div className="font-semibold flex items-center text-lg">
