@@ -8,8 +8,8 @@ const getInitialVisibleCount = () => {
   if (typeof window === "undefined") return 3;
 
   if (window.innerWidth >= 1024) return 3; // lg: 3 columns, 3 rows
-  if (window.innerWidth >= 640) return 4;  // sm: 2 columns, 3 rows
-  return 3;                                // 1 column
+  if (window.innerWidth >= 640) return 4; // sm: 2 columns, 3 rows
+  return 3; // 1 column
 };
 
 const ProjectsGrid = () => {
@@ -52,13 +52,13 @@ const ProjectsGrid = () => {
             rel="noopener noreferrer"
             className="group rounded-xl overflow-hidden bg-[#111] hover:bg-[#222] border border-[#333] hover:border-white/20 shadow-md hover:shadow-lg transition-all w-full max-w-sm"
           >
-            <div className="z-0 relative h-48 w-full">
+            <div className="relative h-48 w-full overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
                 layout="fill"
                 objectFit="cover"
-                className="transition-transform duration-300 group-hover:scale-105"
+                className="scale-100 group-hover:scale-115 transition-transform duration-500 ease-out"
               />
             </div>
             <div className="z-10 p-4 bg-[#111] group-hover:bg-[#222]">
@@ -86,13 +86,13 @@ const ProjectsGrid = () => {
               rel="noopener noreferrer"
               className="group rounded-xl overflow-hidden bg-[#111] hover:bg-[#222] border border-[#333] hover:border-white/20 shadow hover:shadow-lg transition-all w-full max-w-sm"
             >
-              <div className="relative h-48 w-full">
+              <div className="relative h-48 w-full overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   layout="fill"
                   objectFit="cover"
-                  className="transition-transform duration-300 group-hover:scale-105"
+                  className="scale-100 group-hover:scale-115 transition-transform duration-500 ease-out"
                 />
               </div>
               <div className="p-4">
