@@ -6,13 +6,13 @@ const projects = [
     image: "/projects/mathNN.webp",
     link: "https://github.com/s4nj1th/handwriting-ml",
   },
-  {
-    title: "Punk Dung",
-    description:
-      "Developed a combat-focused RPG in Godot featuring procedurally generated maps and dynamic gameplay mechanics.",
-    image: "/projects/punkdung.webp",
-    link: "",
-  },
+  // {
+  //   title: "Punk Dung",
+  //   description:
+  //     "Developed a combat-focused RPG in Godot featuring procedurally generated maps and dynamic gameplay mechanics.",
+  //   image: "/projects/punkdung.webp",
+  //   link: "",
+  // },
   {
     title: "Dhammapada App",
     description:
@@ -21,26 +21,26 @@ const projects = [
     link: "https://github.com/s4nj1th/pocket-dhamma",
   },
   {
-    title: "Attendance Calculator",
-    description:
-      "Created a website in simple HTML/CSS + JS to calculate allowable skips or required classes to maintain attendance in a course.",
-    image: "/projects/attCalc.webp",
-    link: "https://s4nj1th.github.io/attendance-calculator/",
-  },
-  {
-    title: "Instrument Detection",
-    description:
-      "Co-authoring a research paper focused on training a convolutional neural network (CNN) model for the detection and classification of surgical instruments in medical images, leveraging YOLO and Roboflow.",
-    image: "/projects/instDtct.webp",
-    link: "",
-  },
-  {
     title: "MomenTerm",
     description:
       "Developed a web application using Next.js to manage and track stock investments, enabling users to create, update, and maintain personalized watchlists.",
     image: "/projects/mmntrm.webp",
     link: "",
   },
+  // {
+  //   title: "Attendance Calculator",
+  //   description:
+  //     "Created a website in simple HTML/CSS + JS to calculate allowable skips or required classes to maintain attendance in a course.",
+  //   image: "/projects/attCalc.webp",
+  //   link: "https://s4nj1th.github.io/attendance-calculator/",
+  // },
+  // {
+  //   title: "Instrument Detection",
+  //   description:
+  //     "Co-authoring a research paper focused on training a convolutional neural network (CNN) model for the detection and classification of surgical instruments in medical images, leveraging YOLO and Roboflow.",
+  //   image: "/projects/instDtct.webp",
+  //   link: "",
+  // },
 ];
 
 export default projects;
