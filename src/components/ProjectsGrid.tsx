@@ -43,14 +43,14 @@ const ProjectsGrid = () => {
     <div className="bg-[#1118] border-[#222] border rounded-[12px] shadow-lg p-10 flex flex-col items-center gap-6">
       <h1 className="text-5xl font-black text-white text-center">Projects</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {visibleProjects.map((project, i) => (
           <a
             key={i}
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group rounded-xl overflow-hidden bg-[#111] hover:bg-[#222] border border-[#333] hover:border-white/20 shadow-md hover:shadow-lg transition-all w-full max-w-sm"
+            className="group rounded-xl overflow-hidden bg-[#111] hover:bg-[#222] border border-[#333] hover:border-white/20 shadow-md hover:shadow-lg transition-all w-full max-w-sm mx-auto"
           >
             <div className="relative h-48 w-full overflow-hidden">
               <Image
@@ -77,14 +77,14 @@ const ProjectsGrid = () => {
         className="transition-[max-height] duration-500 ease-in-out overflow-hidden w-full"
         style={{ maxHeight }}
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-6">
           {hiddenProjects.map((project, i) => (
             <a
               key={i + visibleCount}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-xl overflow-hidden bg-[#111] hover:bg-[#222] border border-[#333] hover:border-white/20 shadow hover:shadow-lg transition-all w-full max-w-sm"
+              className="group rounded-xl overflow-hidden bg-[#111] hover:bg-[#222] border border-[#333] hover:border-white/20 shadow hover:shadow-lg transition-all w-full max-w-sm mx-auto"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image

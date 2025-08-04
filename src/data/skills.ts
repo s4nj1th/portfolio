@@ -14,7 +14,8 @@ const skillCats = {
     { name: "NumPy", bgColor: "#4C78D0", icon: "SiNumpy" },
     { name: "Pandas", bgColor: "#160458", icon: "SiPandas" },
     { name: "Jupyter Notebook", bgColor: "#F37726", icon: "SiJupyter" },
-    { name: "MATLAB", bgColor: "#D16432", icon: "SiMatrix" }
+    { name: "MATLAB", bgColor: "#D16432", icon: "SiMatrix" },
+    { name: "Scikit", bgColor: "#F89A36", icon: "SiScikitlearn"},
   ],
   "Web Dev": [
     { name: "HTML5", bgColor: "#FC4703", icon: "SiHtml5" },
